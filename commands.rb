@@ -210,7 +210,7 @@ You can also tip people with reactions to their messages. Try 1bit :1bit:, 10bit
   end
 
   def tipbot_user_id
-    @coinfundtip_user_id ||= $redis.get('tipbot_user_id')
+    @tipbot_user_id ||= $redis.get('tipbot_user_id')
   end
 
   def fail message, channel

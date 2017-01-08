@@ -70,7 +70,7 @@ class Tipbot
         users = {}
         $client.web_client.get('/api/users.list')['members'].each do |m|
           users[m['id']] = m['name']
-          $redis.set('tipbot_user_id', m['id']) if m['name'] == 'tipbot'
+          $redis.set('tipbot_user_id', m['id']) if m['name'] == 'coinfundtip'
         end
         $redis.mapped_hmset 'users', users
       rescue Exception => e
