@@ -57,7 +57,7 @@ class Tipbot
       when 'fail'
         blah # throw exception, test how gracefully it handles errors
       else
-        message(channel: data['channel'], text: "Sorry <@#{data['user']}>, I didn't understand that command. Try @tipbot help.")
+        message(channel: data['channel'], text: "Sorry <@#{data['user']}>, I didn't understand that command. Try @coinfundtip help.")
       end
     end
 

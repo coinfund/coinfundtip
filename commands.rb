@@ -14,13 +14,13 @@ Tipping
 
 Other Commands
 
-  @tipbot balance <currency>                   # shows your balance, 'bal' or 'b' also work
-  @tipbot deposit                              # show a bitcoin address to add more funds
-  @tipbot withdraw <amount> <address|email>    # withdraw to a bitcoin or email address
-  @tipbot send <amount> <address|email>        # same as withdraw
-  @tipbot leaderboard <currency>               # see who has what, 'rank' also works
+  @coinfundtip balance <currency>                   # shows your balance, 'bal' or 'b' also work
+  @coinfundtip deposit                              # show a bitcoin address to add more funds
+  @coinfundtip withdraw <amount> <address|email>    # withdraw to a bitcoin or email address
+  @coinfundtip send <amount> <address|email>        # same as withdraw
+  @coinfundtip leaderboard <currency>               # see who has what, 'rank' also works
 
-In direct message chat, you can issue these commands without prefixing '@tipbot ...'.```
+In direct message chat, you can issue these commands without prefixing '@coinfundtip ...'.```
 \n
 You can also tip people with reactions to their messages. Try 1bit :1bit:, 10bits :10bits:, 100bits :100bits:, and 1000bits :1000bits:.
       ".strip
@@ -114,7 +114,7 @@ You can also tip people with reactions to their messages. Try 1bit :1bit:, 10bit
 
   def send data
     command, amount, to, currency = data['text'].split
-    return {text: "Try this format: `@tipbot withdraw <amount> <bitcoin-address|email>`"} if amount.nil? or to.nil?
+    return {text: "Try this format: `@coinfundtip withdraw <amount> <bitcoin-address|email>`"} if amount.nil? or to.nil?
     currency = normalize_currency(currency)
     account_id = find_or_create_account(data['user'])
     account = coinbase.account(account_id)
@@ -210,7 +210,7 @@ You can also tip people with reactions to their messages. Try 1bit :1bit:, 10bit
   end
 
   def tipbot_user_id
-    @tipbot_user_id ||= $redis.get('tipbot_user_id')
+    @coinfundtip_user_id ||= $redis.get('tipbot_user_id')
   end
 
   def fail message, channel
