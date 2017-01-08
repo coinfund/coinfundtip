@@ -1,3 +1,5 @@
+_NOTICE: This is a fork of https://github.com/barmstrong/slack-tipbot modified for CoinFund Slack channel._
+
 # Slack Bitcoin Tipbot
 
 Reward teammates in slack with bitcoin! Recognize greatness on your team with the future of currency.
